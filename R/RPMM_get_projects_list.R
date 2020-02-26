@@ -1,8 +1,8 @@
-##' Download list of projects from RIKEN PMM 
+##' Download list of projects from RIKEN PMM
 ##' (http://metabobank.riken.jp/) with SPARQL queries
 ##'
 ##' @title get Project list of RIKEN PMM with species info
-##' @param sciname a scientific name of species (default: Arabidopsis thaliana)
+##' @param scientific_name a scientific name of species
 ##' @param taxonid NCBI taxonomy ID (default: 3702)
 ##' @return A data.frame of Project lists
 ##' @author Atsushi Fukushima
@@ -10,15 +10,16 @@
 ##' @examples
 ##' res <- RPMM_get_projects_list(taxonid = 3702) ## Arabidopsis
 ##' head(res)
-RPMM_get_projects_list <- function(sciname = "Arabidopsis thaliana",
-                                    taxonid = 3702) {
+RPMM_get_projects_list <- function(scientific_name = "Arabidopsis thaliana",
+                                   taxonid = 3702) {
     
     endpoint <- "http://metabobank.riken.jp/pmm/endpoint"
     
-    if ((is.null(sciname)) || (is.null(taxonid))) 
+    if ((is.null(scientific_name)) || (is.null(taxonid))) 
         stop("Please input species name or NCBI taxonomy ID.")
-    if (!is.null(sciname)) {
-        taxonid <- taxize::get_uid(sciname, ask = FALSE, messages = FALSE)[1]
+    if (!is.null(scientific_name)) {
+        taxonid <- taxize::get_uid(scientific_name, 
+                                   ask = FALSE, messages = FALSE)[1]
         if (is.na(taxonid)) 
             stop("Not found the species name in NCBI taxonomy.")
     }
