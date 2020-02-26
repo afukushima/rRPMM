@@ -1,19 +1,16 @@
 # rRPMM
 
-R package to download and parse RPMM's metadata from RIKEN Plant Metabolome 
-Metadatabase (). This package is new and likely has bugs due to unexpected 
-structures of some meta-data format. Please report bugs.
+R package to download and parse RPMM's metadata from [RIKEN Plant Metabolome 
+Metadatabase](http://metabobank.riken.jp/). This package is new and likely has 
+bugs due to unexpected structures of some meta-data format. Please report bugs.
 
-It will pull a list of Studies/Projects from MetabolomeXchange but only RPMM's 
-Projects are supported for pulling the data.
 
 ## Installation
 Install the devtools package and run:
 
 ```r
 install.packages("devtools")
-devtools::install_git(""https://gitxxxxxxxxxxxxxxxxxxxxxxxxxx.git"")
-
+devtools::install_github("afukushima/rRPMM", build_vignettes = TRUE)
 ```
 ## Example
 
