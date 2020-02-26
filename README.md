@@ -31,4 +31,4 @@ res <- RPMM_get_rawdata_files(project = "RPMM0001")
 
 ### License
 
-The rRPMM package is free software; [a copy of the GNU General Public License, version 3](http://www.r-project.org/Licenses/GPL-3)
+The rRPMM package is free software; [the GNU General Public License, version 3](http://www.r-project.org/Licenses/GPL-3)

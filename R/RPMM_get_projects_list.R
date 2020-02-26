@@ -10,16 +10,16 @@
 ##' @examples
 ##' res <- RPMM_get_projects_list(taxonid = 3702) ## Arabidopsis
 ##' head(res)
-RPMM_get_projects_list <- function(scientific_name = "Arabidopsis thaliana",
-                                   taxonid = 3702) {
+RPMM_get_projects_list <- function(scientific_name = "Arabidopsis thaliana", 
+                                    taxonid = 3702) {
     
     endpoint <- "http://metabobank.riken.jp/pmm/endpoint"
     
     if ((is.null(scientific_name)) || (is.null(taxonid))) 
         stop("Please input species name or NCBI taxonomy ID.")
     if (!is.null(scientific_name)) {
-        taxonid <- taxize::get_uid(scientific_name, 
-                                   ask = FALSE, messages = FALSE)[1]
+        taxonid <- taxize::get_uid(scientific_name, ask = FALSE, 
+                                    messages = FALSE)[1]
         if (is.na(taxonid)) 
             stop("Not found the species name in NCBI taxonomy.")
     }
@@ -33,7 +33,7 @@ RPMM_get_projects_list <- function(scientific_name = "Arabidopsis thaliana",
                         ")
     sparql_filter <- paste("
     FILTER( ?species = <http://purl.bioontology.org/ontology/NCBITAXON/", 
-        taxonid, "> ).", sep = "")
+                        taxonid, "> ).", sep = "")
     
     query <- paste(sparql_prefix, "
     SELECT DISTINCT ?proj

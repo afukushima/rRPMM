@@ -4,10 +4,13 @@
 \alias{RPMM_get_projects_list}
 \title{get Project list of RIKEN PMM with species info}
 \usage{
-RPMM_get_projects_list(sciname = "Arabidopsis thaliana", taxonid = 3702)
+RPMM_get_projects_list(
+  scientific_name = "Arabidopsis thaliana",
+  taxonid = 3702
+)
 }
 \arguments{
-\item{sciname}{a scientific name of species (default: Arabidopsis thaliana)}
+\item{scientific_name}{a scientific name of species}
 
 \item{taxonid}{NCBI taxonomy ID (default: 3702)}
 }
@@ -15,7 +18,7 @@ RPMM_get_projects_list(sciname = "Arabidopsis thaliana", taxonid = 3702)
 A data.frame of Project lists
 }
 \description{
-Download list of projects from RIKEN PMM 
+Download list of projects from RIKEN PMM
 (http://metabobank.riken.jp/) with SPARQL queries
 }
 \examples{

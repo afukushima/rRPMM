@@ -17,7 +17,7 @@ RPMM_numOfprojects_family <- function() {
     PREFIX dcterms: <http://purl.org/dc/dcmitype/>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX obo: <http://purl.obolibrary.org/obo/>
-                           ")
+                        ")
     
     query <- paste(sparql_prefix, "
     SELECT DISTINCT ?family ?familyLabel count(distinct ?proj)
@@ -32,13 +32,13 @@ RPMM_numOfprojects_family <- function() {
         ?family <http://purl.bioontology.org/ontology/NCBITAXON/RANK> 
         \"family\"^^<http://www.w3.org/2001/XMLSchema#string> .
         ?family <http://www.w3.org/2004/02/skos/core#prefLabel> ?familyLabel .
-                   }")
+                }")
     
     res <- tryCatch({
         SPARQL::SPARQL(endpoint, query)
-        }, error = function(err) {
-            message("an error occured when trying to query for RPMM.", err)
-            })
+    }, error = function(err) {
+        message("an error occured when trying to query for RPMM.", err)
+    })
     
     return(res$results)
 }

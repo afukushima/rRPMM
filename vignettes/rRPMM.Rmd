@@ -2,7 +2,7 @@
 title: "rRPMM"
 author:
 - name: Atsushi Fukushima
-  affiliation: RIKEN Center for Sustainable Resource Science
+  affiliation: RIKEN
   email: afukushima@gmail.com
 date: "`r Sys.Date()`"
 output:
@@ -53,11 +53,11 @@ others <- list("Others", sum(resMat_others$num))
 resMatfin <- rbind(resMat_1over, data.frame(Species="others", num="28"))
 
 p <- plot_ly(resMatfin, labels = ~Species, values = ~num, type = 'pie') %>%
-  layout(title = 'RPMM projects (Feb 19, 2020)',
-         xaxis = list(showgrid = FALSE, zeroline = FALSE, 
-                      showticklabels = FALSE),
-         yaxis = list(showgrid = FALSE, zeroline = FALSE, 
-                      showticklabels = FALSE))
+    layout(title = 'RPMM projects (Feb 26, 2020)',
+        xaxis = list(showgrid = FALSE, zeroline = FALSE, 
+                        showticklabels = FALSE),
+        yaxis = list(showgrid = FALSE, zeroline = FALSE, 
+                        showticklabels = FALSE))
 p
 
 ```

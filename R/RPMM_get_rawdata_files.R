@@ -8,7 +8,7 @@
 ##' @author Atsushi Fukushima
 ##' @export
 ##' @examples 
-##' res <- RPMM_get_rawdata_files(project = "RPMM0001")
+##' res <- RPMM_get_rawdata_files(project = 'RPMM0001')
 ##' head(res$url)
 RPMM_get_rawdata_files <- function(project = "RPMM0001") {
     
@@ -23,12 +23,13 @@ RPMM_get_rawdata_files <- function(project = "RPMM0001") {
     PREFIX riken: <http://metadb.riken.jp/ontology/plantMetabolomics/0.1/>
     PREFIX dcterms: <http://purl.org/dc/dcmitype/>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-                           ")
+                        ")
     
     sparql_filter <- paste("
-    FILTER( ?proj = <http://metadb.riken.jp/db/plantMetabolomics/0.1/Project/",
-                     project, "> ).", sep = "")
-       
+    FILTER( ?proj = <http://metadb.riken.jp/db/plantMetabolomics/0.1/Project/", 
+                    project, "> ).", 
+        sep = "")
+    
     query <- paste(sparql_prefix, "
     SELECT DISTINCT ?rawDataset ?url
     WHERE {
@@ -36,7 +37,7 @@ RPMM_get_rawdata_files <- function(project = "RPMM0001") {
         ?exp riken:measurement ?measurement .
         ?measurement riken:rawDataset ?rawDataset .
         ?rawDataset riken:file ?file .
-        ?file riken:downloadURL ?url .",
+        ?file riken:downloadURL ?url .", 
         sparql_filter, "}")
     
     res <- tryCatch({

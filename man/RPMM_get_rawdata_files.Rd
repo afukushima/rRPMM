@@ -18,7 +18,7 @@ from RIKEN PMM
 (http://metabobank.riken.jp/) with SPARQL queries
 }
 \examples{
-res <- RPMM_get_rawdata_files(project = "RPMM0001")
+res <- RPMM_get_rawdata_files(project = 'RPMM0001')
 head(res$url)
 }
 \author{

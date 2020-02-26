@@ -16,7 +16,7 @@ RPMM_numOfprojects_species <- function() {
     PREFIX riken: <http://metadb.riken.jp/ontology/plantMetabolomics/0.1/>
     PREFIX dcterms: <http://purl.org/dc/dcmitype/>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-                           ")
+                        ")
     
     query <- paste(sparql_prefix, "
     SELECT DISTINCT ?species ?speciesLabel ?family 
