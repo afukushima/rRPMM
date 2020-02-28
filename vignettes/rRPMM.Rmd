@@ -2,7 +2,7 @@
 title: "rRPMM" - An accessor for RIKEN Plant Metabolome Metadatabase (RPMM)
 author:
 - name: Atsushi Fukushima
-  affiliation: RIKEN
+  affiliation: RIKEN CSRS
   email: afukushima@gmail.com
 date: "`r Sys.Date()`"
 output:
