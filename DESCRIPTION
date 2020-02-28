@@ -11,7 +11,7 @@ License: GPL
 Depends: R (>= 3.6.0)
 Imports: SPARQL, taxize
 Suggests: testthat, roxygen2, knitr, BiocStyle, 
-        rmarkdown, dplyr, plotly
+        rmarkdown, plotly, dplyr
 Encoding: UTF-8
 biocViews: Software, Metabolomics
 VignetteBuilder: knitr
