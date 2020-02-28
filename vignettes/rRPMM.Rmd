@@ -1,5 +1,5 @@
 ---
-title: "rRPMM" - An accessor for RIKEN Plant Metabolome Metadatabase (RPMM)
+title: "rRPMM - An accessor for RIKEN Plant Metabolome Metadatabase (RPMM)" 
 author:
 - name: Atsushi Fukushima
   affiliation: RIKEN CSRS
