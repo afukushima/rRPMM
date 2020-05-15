@@ -1,0 +1,9 @@
+on: [push]
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    container: bioconductor/bioconductor_docker:devel
+    steps:
+      - uses: actions/checkout@v1
+      - run: Rscript -e 'BiocManager::install("BiocCheck")'
+      - run: R CMD BiocCheck --help
