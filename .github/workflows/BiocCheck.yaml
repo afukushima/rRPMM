@@ -6,4 +6,5 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: Rscript -e 'BiocManager::install("BiocCheck")'
-      - run: R CMD BiocCheck --help
+      - run: Rscript -e 'remotes::install_deps(dependencies = TRUE)'
+      - run: cd .. && R CMD BiocCheck rRPMM
