@@ -2,13 +2,13 @@ Package: rRPMM
 Type: Package
 Title: An accessor for RIKEN Plant Metabolome Metadatabase (RPMM)
 Version: 0.99.0
-Date: 2020-02-14
+Date: 2020-05-28
 Authors@R: c(person("Atsushi", "Fukushima", role = c("aut", "cre"),
                     email = "afukushima@gmail.com"))
 Description: An accessor for RIKEN Plant Metabolome Metadatabase (RIKEN PMM) 
     that downloads the RDF metadata and converts to an R list.
 License: GPL
-Depends: R (>= 3.6.0)
+Depends: R (>= 4.0.0)
 Imports: SPARQL, taxize
 Suggests: testthat, roxygen2, knitr, BiocStyle, 
         rmarkdown, plotly, dplyr
