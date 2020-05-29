@@ -4,7 +4,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: '0 7 * * 5'
+    - cron: '0 8 * * 5'
 
 name: R-CMD-check
 
@@ -80,8 +80,7 @@ jobs:
           Rscript -e "remotes::install_github('r-hub/sysreqs')"
           sysreqs=$(Rscript -e "cat(sysreqs::sysreq_commands('DESCRIPTION'))")
           sudo -s eval "$sysreqs"
-          sudo apt-get update && sudo apt-get -y install qpdf
-          sudo apt-get install libcurl4-gnutls-dev
+          sudo apt-get update && sudo apt-get -y install libcurl4-openssl-dev
 
       - name: Install dependencies
         run: |
