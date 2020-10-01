@@ -17,6 +17,7 @@ devtools::install_github("afukushima/rRPMM", build_vignettes = TRUE)
 ### Download a list of studies with Arabidopsis
 
 ```r
+library(SPARQL)
 library(rRPMM)
 data_table <- RPMM_get_projects_list(taxonid = 3702) ## Arabidopsis
 ```
