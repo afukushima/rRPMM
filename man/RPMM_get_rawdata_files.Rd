@@ -4,10 +4,12 @@
 \alias{RPMM_get_rawdata_files}
 \title{Getting all the raw data files in a Project from RPMM}
 \usage{
-RPMM_get_rawdata_files(project = "RPMM0001")
+RPMM_get_rawdata_files(project = "RPMM0001", abf = FALSE)
 }
 \arguments{
 \item{project}{a Project identifier in RIKEN PMM (default: RPMM0001)}
+
+\item{abf}{use abf format file (default: netCDF files)}
 }
 \value{
 A data.frame of raw data file lists

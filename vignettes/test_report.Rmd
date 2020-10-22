@@ -1,0 +1,46 @@
+---
+title: "RPMM_report"
+author: "Atsushi Fukushima"
+date: "`r Sys.Date()`"
+output:
+  BiocStyle::html_document:
+package: rRPMM
+vignette: |
+  %\VignetteIndexEntry{rRPMM: test reports}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+---
+
+```{r setup, include = FALSE, message = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# RPMM: "RPMM0001"
+
+This is a test report for ["RPMM0001"](http://metabobank.riken.jp/pmm/db/plantMetabolomics/http://metadb.riken.jp/db/plantMetabolomics/0.1/Project/RPMM0001) in RIKEN PMM.
+
+
+```{r getData, message = FALSE}
+library(SPARQL)
+library(rRPMM)
+res <- RPMM_get_project_info(projectid = "RPMM0001")
+```
+
+```{r showData, message = FALSE}
+knitr::kable(data.frame(unlist(res)))
+```
+
+
+# RPMM: "RPMM0003"
+
+This is a test report for ["RPMM0003"](http://metabobank.riken.jp/pmm/db/plantMetabolomics/http://metadb.riken.jp/db/plantMetabolomics/0.1/Project/RPMM0003) in RIKEN PMM.
+
+
+```{r getData2, message = FALSE}
+res2 <- RPMM_get_project_info(projectid = "RPMM0003")
+```
+
+```{r showData2, message = FALSE}
+knitr::kable(data.frame(unlist(res2)))
+```
+

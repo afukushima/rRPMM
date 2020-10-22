@@ -29,13 +29,7 @@ The rRPMM package is an accessor for RPMM.
 
 # Usage
 
-```{r setup}
-# suppressPackageStartupMessages(library(SPARQL))
-# suppressPackageStartupMessages(library(rRPMM))
-# suppressPackageStartupMessages(library(plotly))
-# suppressPackageStartupMessages(library(dplyr))
-# Sys.setenv(LANGUAGE="en_US.UTF-8") 
-
+```{r setup, message = FALSE, warning = FALSE}
 library(SPARQL)
 library(rRPMM)
 library(plotly)
@@ -53,7 +47,7 @@ others <- list("Others", sum(resMat_others$num))
 resMatfin <- rbind(resMat_1over, data.frame(Species="others", num="28"))
 
 p <- plot_ly(resMatfin, labels = ~Species, values = ~num, type = 'pie') %>%
-    layout(title = 'RPMM projects (Feb 26, 2020)',
+    layout(title = 'RPMM projects (Oct 22, 2020)',
         xaxis = list(showgrid = FALSE, zeroline = FALSE, 
                         showticklabels = FALSE),
         yaxis = list(showgrid = FALSE, zeroline = FALSE, 
@@ -62,11 +56,18 @@ p
 
 ```
 
-# Getting all the raw data files in a Project (Accession #: RPMM0001)
+# Getting all the raw data (netCDF) files in a Project (Accession #: RPMM0001)
 
 ```{r rawdata}
 res <- RPMM_get_rawdata_files(project = "RPMM0001")
 head(res$url)
+```
+
+## Using ABF* format files (*Reifycs's [Analysis Base File](https://www.reifycs.com/AbfConverter/)) 
+
+```{r rawdata2}
+res2 <- RPMM_get_rawdata_files(project = "RPMM0001", abf = TRUE)
+head(res2$url)
 ```
 
 # Session information {.unnumbered}
